@@ -61,7 +61,7 @@ class RemoteCostsService {
     }
 
     private suspend fun simulateNetworkDelayCoroutines() {
-        delay(random.nextInt(0, 1500).toLong())
+        delay(random.nextInt(0, 500).toLong())
     }
 
     // To show that I am main safe aware :-)

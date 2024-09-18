@@ -11,6 +11,7 @@ import club.premiumit.consentlab.domain.usecase.SaveGrantedUseCase
 import com.usercentrics.sdk.UsercentricsCMPData
 import com.usercentrics.sdk.UsercentricsServiceConsent
 import com.usercentrics.sdk.errors.UsercentricsError
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,10 +24,11 @@ private const val DEFAULT_VALUE = "0"
 
 @Immutable
 data class UiState(
-    val score: String
+    val score: String,
+    val isLoading: Boolean
 ) {
     companion object {
-        fun default() = UiState(score = DEFAULT_VALUE)
+        fun default() = UiState(score = DEFAULT_VALUE, isLoading = false)
     }
 }
 
@@ -46,7 +48,12 @@ class MainViewModel(
     private val calculateUseCase: CalculateUseCase,
     private val costAdjustUseCase: CostAdjustUseCase,
     private val saveGrantedUseCase: SaveGrantedUseCase,
-    private val getGrantedUseCase: GetGrantedUseCase
+    private val getGrantedUseCase: GetGrantedUseCase,
+    private val errorHandler: CoroutineExceptionHandler =
+        CoroutineExceptionHandler { _, throwable ->
+            // just as a showcase that i remember about error handling
+            println(throwable.message)
+        }
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(UiState.default())
     val uiState = _uiState.asStateFlow()
@@ -65,7 +72,8 @@ class MainViewModel(
     }
 
     private fun onCollectConsentData(data: UsercentricsCMPData) {
-        viewModelScope.launch {
+        _uiState.update { it.copy(isLoading = true) }
+        viewModelScope.launch(errorHandler) {
             val calculations = mutableMapOf<String, Deferred<Double>>()
             val granted = getGrantedUseCase()
 
@@ -91,7 +99,7 @@ class MainViewModel(
             renderToConsole(results, total)
 
             _uiState.update {
-                it.copy(score = total.toString())
+                it.copy(score = total.toString(), isLoading = false)
             }
         }
     }
@@ -112,7 +120,7 @@ class MainViewModel(
 
     private fun onConsent(consents: List<UsercentricsServiceConsent>?) {
         val granted = consents?.asSequence()?.filter { it.status }
-        println("PVD: onConsent: \n\t${granted?.joinToString("\n")}")
+        println("\n\t${granted?.joinToString("\n")}")
         if (granted != null) {
             viewModelScope.launch {
                 saveGrantedUseCase(granted.map { it.dataProcessor }.toList())
@@ -122,7 +130,7 @@ class MainViewModel(
     }
 
     private fun onFailure(error: UsercentricsError) {
-        println("PVD: onFailure: \n\t${error.message}")
+        println("\n\t${error.message}")
     }
 
     internal class Factory(

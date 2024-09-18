@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = DarkBlue,
+    primary = Blue,
     secondary = Grey,
     onBackground = Black,
     surface = White,
@@ -19,7 +19,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = DarkBlue,
+    primary = Blue,
     secondary = Grey,
     onBackground = Black,
     surface = White,
@@ -49,3 +49,6 @@ fun ConsentLabTheme(
         content = content
     )
 }
+
+//Decided not to invest time into material theme struggle
+val buttonBackground = Blue
