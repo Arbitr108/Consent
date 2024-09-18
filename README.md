@@ -8,12 +8,13 @@
 + For the multi threading i have used the kotlin coroutines
 + For the Di i have implemented my own simple solution, to scale to the production level i would suggest koin or dagger (depending on the compile time worries ;-))
 + The code has important comments in the critical parts, so feel free to dive into
++ Structured concurrency friendly usecases
 
 ### Things to improve for the better production experience
 1. Put the Usercentrics engine initialization into background (as it is mentioned in the documentation) using AndroidViewModel (application context aware)
-   Introduce the database or key value datastore to keep costs and easily syncronize with the backend
-   The costs of the data types should be provided from the backend and then saved to the selected storage
-   Use koin or dagger di frameworks
-2. 
+2. Introduce the database or key value datastore to keep costs and easily syncronize with the backend
+3. The costs of the data types should be provided from the backend and then saved to the selected storage
+4. Use koin or dagger di frameworks
+
 ### Things to improve the engine
 1. Usercetrics service.dataCollectedList is expected to return only granted consents so it will be more developer friendly
