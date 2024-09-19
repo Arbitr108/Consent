@@ -2,6 +2,10 @@ package club.premiumit.consentlab.di.provider
 
 import kotlin.reflect.KClass
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 @Suppress("UNCHECKED_CAST")
 class DiImpl : DI {
     private val diContainer : MutableMap<Any, Any> = mutableMapOf()

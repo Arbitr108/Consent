@@ -7,8 +7,11 @@ import com.usercentrics.sdk.UsercentricsBanner
 import com.usercentrics.sdk.UsercentricsCMPData
 import com.usercentrics.sdk.UsercentricsServiceConsent
 import com.usercentrics.sdk.errors.UsercentricsError
-import kotlinx.collections.immutable.ImmutableList
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 class ConsentAdapter(
     private val context: Context,
     private val onConsent: (List<UsercentricsServiceConsent>?) -> Unit,

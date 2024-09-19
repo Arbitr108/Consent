@@ -8,6 +8,10 @@ import kotlin.random.Random
 import kotlinx.coroutines.delay
 
 // This is a mocked remote service responding with the costs of the data types
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 class RemoteCostsService {
 
     private val random = Random(System.currentTimeMillis())
@@ -60,6 +64,7 @@ class RemoteCostsService {
         return costRulesResponse
     }
 
+    // you may setup the simulation to check the quality
     private suspend fun simulateNetworkDelayCoroutines() {
         delay(random.nextInt(0, 500).toLong())
     }

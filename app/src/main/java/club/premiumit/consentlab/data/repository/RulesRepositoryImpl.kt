@@ -10,6 +10,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 // For the offline use we need to cache the rules in the db
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 class RulesRepositoryImpl(
     private val remoteCostsService: RemoteCostsService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO

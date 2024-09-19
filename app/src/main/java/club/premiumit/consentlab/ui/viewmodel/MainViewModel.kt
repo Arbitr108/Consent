@@ -22,6 +22,10 @@ import kotlinx.coroutines.launch
 
 private const val DEFAULT_VALUE = "0"
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 @Immutable
 data class UiState(
     val score: String,

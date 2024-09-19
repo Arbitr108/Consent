@@ -2,9 +2,9 @@ package club.premiumit.consentlab.di.modules
 
 import club.premiumit.consentlab.di.provider.DiImpl
 import club.premiumit.consentlab.di.provider.DiProvider
-import club.premiumit.consentlab.ui.adapter.ConsentEngineInitializer
-import club.premiumit.consentlab.ui.adapter.InitScope
-import club.premiumit.consentlab.ui.adapter.Initializer
+import club.premiumit.consentlab.ConsentEngineInitializer
+import club.premiumit.consentlab.InitScope
+import club.premiumit.consentlab.Initializer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
