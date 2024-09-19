@@ -1,5 +1,5 @@
 ## ConsentLab task
-You may be using [Pavel Gorbatiuk, https://premiumIt.club](https://premiumIt.club)
+Implemented by [Pavel Gorbatiuk, https://premiumIt.club](https://premiumIt.club)
 
 https://github.com/user-attachments/assets/4fa509d5-152e-40ae-9444-c867509c7d0a
 
