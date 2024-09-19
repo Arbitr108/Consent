@@ -12,6 +12,7 @@ https://github.com/user-attachments/assets/4fa509d5-152e-40ae-9444-c867509c7d0a
 + For the Di i have implemented my own simple solution, to scale to the production level i would suggest koin or dagger (depending on the compile time worries ;-))
 + The code has important comments in the critical parts, so feel free to dive into
 + Structured concurrency friendly usecases
++ Unit tests for the critical estimations logic, usually i keep to ~ 80-90% of test coverage in production
 
 ### Things to improve for the better production experience
 1. Put the Usercentrics engine initialization into background (as it is mentioned in the documentation) using AndroidViewModel (application context aware)
