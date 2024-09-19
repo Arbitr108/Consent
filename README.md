@@ -21,7 +21,6 @@ _While implementing the task I tried to show my skills and at the same time to a
 + Unit tests for the critical estimations logic, usually i keep to ~ 80-90% of test coverage in production
 
 ### Things to improve for the better production experience
-+ Put the Usercentrics engine initialization into background (as it is mentioned in the documentation) using AndroidViewModel (application context aware)
 + Introduce the database or key value datastore to keep costs and easily syncronize with the backend
 + The costs of the data types should be provided from the backend and then saved to the selected storage
 + Use koin or dagger di frameworks
