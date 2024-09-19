@@ -2,24 +2,18 @@ package club.premiumit.consentlab
 
 import android.app.Application
 import club.premiumit.consentlab.di.modules.appModule
-import com.usercentrics.sdk.Usercentrics
-import com.usercentrics.sdk.UsercentricsOptions
-import com.usercentrics.sdk.models.common.UsercentricsLoggerLevel
+import club.premiumit.consentlab.di.provider.consentDi
+import club.premiumit.consentlab.ui.adapter.Initializer
 
 class ConsentApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        val options = UsercentricsOptions(
-            settingsId = BuildConfig.SETTINGS_ID,
-            loggerLevel =
-            if (BuildConfig.DEBUG) UsercentricsLoggerLevel.DEBUG
-            else UsercentricsLoggerLevel.ERROR
-        )
         // Init dependencies
         appModule()
 
-        // TODO: use AndroidViewModel to initialize in background
-        Usercentrics.initialize(this, options)
+        val consentEnginStart by consentDi<Initializer>()
+        consentEnginStart(this)
     }
+
 }
