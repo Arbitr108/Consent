@@ -9,6 +9,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 // For the offline use we need to cache the costs in the db
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 class CostsRepositoryImpl(
     private val remoteCostsService: RemoteCostsService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO

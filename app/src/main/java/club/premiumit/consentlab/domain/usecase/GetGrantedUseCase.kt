@@ -2,6 +2,10 @@ package club.premiumit.consentlab.domain.usecase
 
 import club.premiumit.consentlab.domain.repository.ConsentsRepository
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 fun interface GetGrantedUseCase{
     suspend operator fun invoke(): List<String>
 }

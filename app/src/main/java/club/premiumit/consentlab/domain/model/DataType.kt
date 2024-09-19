@@ -4,6 +4,10 @@ package club.premiumit.consentlab.domain.model
 // to decouple the layers' dependencies and to avoid to show the data info
 // that is not required for the business logic, but only for the data layer
 // Some times we may even have separate ui level models for more sophisticated mapping
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 data class DataType(
     val name: String,
     val value: Int

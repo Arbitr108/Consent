@@ -2,6 +2,10 @@ package club.premiumit.consentlab.data.models
 
 import club.premiumit.consentlab.domain.model.CostRule
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 sealed interface CostRuleRemote {
     val priority: Int
     data class CostStatic(

@@ -1,7 +1,6 @@
-package club.premiumit.consentlab.ui.adapter
+package club.premiumit.consentlab
 
 import android.app.Application
-import club.premiumit.consentlab.BuildConfig
 import com.usercentrics.sdk.Usercentrics
 import com.usercentrics.sdk.UsercentricsOptions
 import com.usercentrics.sdk.models.common.UsercentricsLoggerLevel
@@ -9,6 +8,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 class InitScope(override val coroutineContext: CoroutineContext) : CoroutineScope
 
 fun interface Initializer {

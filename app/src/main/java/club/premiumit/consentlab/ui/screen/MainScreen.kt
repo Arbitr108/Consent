@@ -21,10 +21,11 @@ import club.premiumit.consentlab.ui.viewmodel.MainViewModel
 import com.usercentrics.sdk.UsercentricsCMPData
 import com.usercentrics.sdk.UsercentricsServiceConsent
 import com.usercentrics.sdk.errors.UsercentricsError
-import kotlinx.collections.immutable.ImmutableList
 
-//TODO: add author
-
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
@@ -38,7 +39,7 @@ fun MainScreen(
     )
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val consentController = rememberConsentController(
+    val consentController = rememberConsentAdapter(
         context = LocalContext.current,
         onConsent = { result -> viewModel.onEvent(MainEvent.OnConsent(result)) },
         onFailure = { error -> viewModel.onEvent(MainEvent.OnFailure(error)) },
@@ -65,7 +66,7 @@ fun MainScreen(
 }
 
 @Composable
-fun rememberConsentController(
+fun rememberConsentAdapter(
     context: Context,
     onConsent: (List<UsercentricsServiceConsent>?) -> Unit,
     onFailure: (UsercentricsError) -> Unit,
@@ -78,11 +79,3 @@ fun rememberConsentController(
         onCollectConsentData = { data -> onCollectConsentData(data) }
     )
 }
-
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun GreetingPreview() {
-//    ConsentLabTheme {
-//        MainScreen()
-//    }
-//}

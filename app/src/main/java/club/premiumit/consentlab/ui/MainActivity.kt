@@ -11,6 +11,10 @@ import androidx.compose.ui.Modifier
 import club.premiumit.consentlab.ui.screen.MainScreen
 import club.premiumit.consentlab.ui.theme.ConsentLabTheme
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

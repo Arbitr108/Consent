@@ -2,6 +2,10 @@ package club.premiumit.consentlab.domain.usecase
 
 import club.premiumit.consentlab.domain.repository.RulesRepository
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 fun interface CostAdjustUseCase {
     suspend operator fun invoke(declared: List<String>, total: Int): Double
 }

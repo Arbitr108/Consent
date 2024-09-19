@@ -3,6 +3,10 @@ package club.premiumit.consentlab.domain.model
 import club.premiumit.consentlab.core.percentOf
 import kotlin.math.abs
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 sealed interface CostRule {
     val priority: Int
     val costChangeRule: Int

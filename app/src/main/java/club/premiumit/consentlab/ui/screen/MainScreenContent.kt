@@ -29,6 +29,10 @@ import club.premiumit.consentlab.ui.theme.buttonBackground
 import club.premiumit.consentlab.ui.viewmodel.UiState
 import club.premiumit.consentlab.ui.widgets.LoadingIndicator
 
+/**
+ *  Created by Pavel Gorbatiuk
+ *  [https://premiumIt.club]
+ **/
 @Composable
 fun MainScreenContent(
     uiState: UiState,
